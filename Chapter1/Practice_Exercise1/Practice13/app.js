@@ -1,0 +1,1 @@
+alert("Hi there, TJ, I am a Javascript program and I am greeting you from another folder!");
