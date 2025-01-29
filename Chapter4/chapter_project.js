@@ -51,30 +51,45 @@ const prompt = require("prompt-sync")(); // Allow for the prompt function to be 
 let sysSelect = ['rock', 'paper', 'scissors']; // define an array with the 3 properties/values needed
 
 let randomSelect = Math.floor(Math.random() * 3); // define var 'randomSelect' to provide random selection of the array value
-
-sysSelect = sysSelect[randomSelect];
+let systemChoice = sysSelect[randomSelect]; // This should give a random index value between 0-2 and use that index to pull the value from the sysSelect array
 
 let usrSelect = prompt("Select either Rock, Paper or Scissors: ").toLowerCase(); // Prompt user to provide a selection.
 
-let message = undefined; // Define var 'message' to hold your logged output.
+let message; // Define var 'message' to hold your logged output.
 
-switch(usrSelect){
-    case "paper" && sysSelect === "rock":
-    case "scissors" && sysSelect === "paper":
-    case "rock" && sysSelect === "scissors":
-        message = "User wins!";
-        break;
-    case "paper" && sysSelect === "scissors":
-    case "rock" && sysSelect === "paper":
-    case "scissors" && sysSelect === "rock":
-        message = "System beats user, you lose!";
-        break;
-    case (usrSelect === sysSelect):
-        message = "User and System tied!";
-        break;
-    default:
-         message = "Invalid input! Try again";
+if(usrSelect === systemChoice){
+    message = "Game tied";
+}
+else{
+    switch(usrSelect){
+        case "paper":
+            if(systemChoice === "rock"){
+                message = "You win";
+            } else if(systemChoice === "scissors"){
+                message = "System wins!"
+            }
+            break;
+        case "rock":
+            if(systemChoice === "scissors"){
+                message = "You win!";
+            } else if(systemChoice === "paper"){
+                message = "System wins!";
+            }
+            break;
+        case "paper":
+            if(systemChoice === "rock"){
+                message = "You win!";
+            } else if(systemChoice === "scissors"){
+                message = "System wins!";
+            }
+            break;
+        default:
+            message ="Don't really know what you were throwing there bud! Try again.";
+    };
 };
-console.log(message);
-console.log(sysSelect);
+console.log(usrSelect); // logs the output of the user selection
+console.log(systemChoice); // logs the output the system's choice
+console.log(message); // Logs the output of the message
+
+
 
