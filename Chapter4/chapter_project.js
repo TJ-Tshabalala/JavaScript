@@ -62,10 +62,10 @@ if(usrSelect === systemChoice){
 }
 else{
     switch(usrSelect){
-        case "paper":
-            if(systemChoice === "rock"){
+        case "scissors":
+            if(systemChoice === "paper"){
                 message = "You win";
-            } else if(systemChoice === "scissors"){
+            } else if(systemChoice === "rock"){
                 message = "System wins!"
             }
             break;
@@ -87,8 +87,8 @@ else{
             message ="Don't really know what you were throwing there bud! Try again.";
     };
 };
-console.log(usrSelect); // logs the output of the user selection
-console.log(systemChoice); // logs the output the system's choice
+console.log("You chose: ",usrSelect); // logs the output of the user selection
+console.log("System chose: ",systemChoice); // logs the output the system's choice
 console.log(message); // Logs the output of the message
 
 
