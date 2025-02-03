@@ -12,9 +12,9 @@ function getName(){
     randomName = Math.floor(Math.random() * 10);
         console.log(descriptiveWordsArray[randomName]);
 };
-
-getName();
 console.log(descriptiveWordsArray);
+getName();
+
 
 
 
