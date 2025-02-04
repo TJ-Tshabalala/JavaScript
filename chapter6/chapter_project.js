@@ -25,23 +25,28 @@
 
 // Set timeout order
 
-let funcOne = () =>{
-    console.log("One");
-}
-let funcTwo = ()=>{
-            console.log("One\nTwo");
+// let funcOne = () =>{
+//     console.log("One");
+// }
+// let funcTwo = ()=>{
+//             console.log("One\nTwo");
+// };
+
+// function thirdFunc(){
+    
+//     console.log("Three");
+//     funcTwo();
+//     funcOne();
+// }
+
+// function fourtFunc(){
+//     console.log("Four");
+//     thirdFunc();
+// }
+
+// setTimeout(fourtFunc, 1000);
+let message = () => {
+    console.log("You got this!");
 };
 
-function thirdFunc(){
-    
-    console.log("Three");
-    funcTwo();
-    funcOne();
-}
-
-function fourtFunc(){
-    console.log("Four");
-    thirdFunc();
-}
-
-setTimeout(fourtFunc, 1000);
+setInterval(message, 10000);
